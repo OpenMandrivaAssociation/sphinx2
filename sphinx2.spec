@@ -23,7 +23,7 @@ Plug your microphone, launch sphinx2-simple, and test it!
 
 %package devel
 Summary:	%{name} header files
-Group:		Development/Libraries
+Group:		System/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -31,7 +31,7 @@ Requires:	%{name} = %{version}-%{release}
 
 %package static
 Summary:	Static sphinx2 libraries
-Group:		Development/Libraries
+Group:		System/Libraries 
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
