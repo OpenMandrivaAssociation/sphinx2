@@ -1,7 +1,7 @@
 Summary:	Speech recognitnion engine
 Name:		sphinx2
 Version:	0.6
-Release:	%mkrel 0
+Release:	%mkrel 1
 License:	BSD-like
 Group:		Sound
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
@@ -23,7 +23,7 @@ Plug your microphone, launch sphinx2-simple, and test it!
 
 %package devel
 Summary:	%{name} header files
-Group:		System/Libraries
+Group:		Development/C
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
