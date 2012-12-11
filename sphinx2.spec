@@ -7,7 +7,6 @@ Group:		Sound
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
 Patch0:		%{name}-wid.patch
 URL:		http://www.speech.cs.cmu.edu/sphinx/
-BuildRoot:	%{tmpdir}/%{name}-%{version}
 
 Requires: sphinxbase
 BuildRequires: sphinxbase sphinxbase-devel
@@ -50,19 +49,11 @@ Static version of sphinx2 libraries.
 %{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=%{buildroot}
 
 # hmm, name may conflict
-rm -f $RPM_BUILD_ROOT%{_bindir}/batch.csh
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+rm -f %{buildroot}%{_bindir}/batch.csh
 
 %files
 %defattr(644,root,root,755)
@@ -75,9 +66,21 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
 %{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
+
+
+%changelog
+* Wed Apr 20 2011 zamir <zamir@mandriva.org> 0.6-1mdv2011.0
++ Revision: 656224
+- new sphinxbase
+
+* Thu Mar 24 2011 zamir <zamir@mandriva.org> 0.6-0
++ Revision: 648315
+- fix spec
+- first build
+- create sphinx2
+
