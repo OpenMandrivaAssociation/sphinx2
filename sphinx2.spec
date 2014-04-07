@@ -1,7 +1,7 @@
 Summary:	Speech recognitnion engine
 Name:		sphinx2
 Version:	0.6
-Release:	%mkrel 1
+Release:	2
 License:	BSD-like
 Group:		Sound
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
@@ -45,12 +45,12 @@ Static version of sphinx2 libraries.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+cp configure.ac configure.in
 %configure
 %{__make}
 
 %install
-%{__make} install \
-	DESTDIR=%{buildroot}
+%makeinstall_std
 
 # hmm, name may conflict
 rm -f %{buildroot}%{_bindir}/batch.csh
@@ -71,16 +71,3 @@ rm -f %{buildroot}%{_bindir}/batch.csh
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
-
-
-%changelog
-* Wed Apr 20 2011 zamir <zamir@mandriva.org> 0.6-1mdv2011.0
-+ Revision: 656224
-- new sphinxbase
-
-* Thu Mar 24 2011 zamir <zamir@mandriva.org> 0.6-0
-+ Revision: 648315
-- fix spec
-- first build
-- create sphinx2
-
