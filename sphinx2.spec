@@ -1,7 +1,7 @@
 Summary:	Speech recognitnion engine
 Name:		sphinx2
 Version:	0.6
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Sound
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
