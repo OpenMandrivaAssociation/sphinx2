@@ -6,7 +6,7 @@ License:	BSD-like
 Group:		Sound
 Source0:	http://dl.sourceforge.net/cmusphinx/%{name}-%{version}.tar.gz
 Patch0:		%{name}-wid.patch
-URL:		http://www.speech.cs.cmu.edu/sphinx/
+URL:		https://www.speech.cs.cmu.edu/sphinx/
 
 Requires: sphinxbase
 BuildRequires: sphinxbase sphinxbase-devel
