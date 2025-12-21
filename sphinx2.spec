@@ -9,6 +9,11 @@ Patch0:		%{name}-wid.patch
 URL:		https://www.speech.cs.cmu.edu/sphinx/
 
 Requires: sphinxbase
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: sphinxbase sphinxbase-devel
 
 %define Werror_cflags %nil
